@@ -5,11 +5,13 @@ const get = (req, res) => {
 };
 
 const post = (req, res) => {
-	req.body.added = new Date();
-	console.log(req.body);
-	messageContainer.addMessage(req.body);
-	console.log(messageContainer.showMessages());
+	if (!req.body.user || !req.body.text) {
+		res.redirect("/new");
+		return;
+	}
 
+	messageContainer.addMessage(req.body);
+	console.log(req.body.user + " has added a new message.");
 	res.redirect("/");
 };
 
