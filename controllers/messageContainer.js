@@ -15,16 +15,19 @@ const messages = [
 		text: "Hi there!",
 		user: "Amando",
 		added: newDate(),
+		comments: [],
 	},
 	{
 		text: "Hello World!",
 		user: "Charles",
 		added: newDate(),
+		comments: [],
 	},
 	{
 		text: "Thanks for checking this out!",
 		user: "Pierce Strutt",
 		added: newDate(),
+		comments: [],
 	},
 ];
 
@@ -35,6 +38,7 @@ class MessageContainer {
 
 	addMessage(message) {
 		message.added = newDate();
+		message.comments = [];
 		this.messages.push(message);
 	}
 
