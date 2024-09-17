@@ -12,9 +12,11 @@ app.use(express.static(assetPath));
 
 const homeRouter = require("./routes/homeRouter");
 const newRouter = require("./routes/newRouter");
+const messageRouter = require("./routes/messageRouter");
 
 app.use("/", homeRouter);
 app.use("/new", newRouter);
+app.use("/message", messageRouter);
 
 app.listen(3000, () => {
 	console.log("Express server started at localhost:3000");

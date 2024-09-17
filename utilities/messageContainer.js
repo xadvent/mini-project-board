@@ -1,3 +1,5 @@
+const { v4: uuidv4 } = require("uuid");
+
 const options = {
 	year: "numeric",
 	month: "2-digit",
@@ -16,18 +18,27 @@ const messages = [
 		user: "Amando",
 		added: newDate(),
 		comments: [],
+		id: uuidv4(),
 	},
 	{
 		text: "Hello World!",
 		user: "Charles",
 		added: newDate(),
 		comments: [],
+		id: uuidv4(),
 	},
 	{
 		text: "Thanks for checking this out!",
 		user: "Pierce Strutt",
 		added: newDate(),
-		comments: [],
+		comments: [
+			{
+				user: "Pierce Strutt",
+				text: "I'm currently adding a way to comment!",
+				added: newDate(),
+			},
+		],
+		id: uuidv4(),
 	},
 ];
 
@@ -37,19 +48,25 @@ class MessageContainer {
 	}
 
 	addMessage(message) {
+		message.id = uuidv4();
 		message.added = newDate();
 		message.comments = [];
 		this.messages.push(message);
 	}
 
 	getMessage(user, text, added) {
-		this.messages.find((message) => {
+		const message = this.messages.find((message) => {
 			return (
 				message.user == user &&
 				message.text == text &&
 				message.added == added
 			);
 		});
+		return message;
+	}
+
+	getMessageById(id) {
+		return this.messages.find((message) => message.id === id);
 	}
 
 	showMessages() {

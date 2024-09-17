@@ -1,0 +1,20 @@
+<head>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<html>
+	<body>
+		<h1 class="title">Mini Message Board</h1>
+		<h1 class='user'><%- message.user %> says</h1>
+		<p><%- message.text%></p>
+		<ul><% message.comments.forEach((comment) => { %>
+			<%- include('comment', {
+				'user': comment.user,
+				'text': comment.text,
+				'added': comment.added,
+			}) %>
+		<% }) %>
+		</ul>
+		<button id="new-button" onclick="window.location.href='/new'">New Message</button>
+		<button id="return-button" onclick="window.location.href='/'">return</button>
+	</body>
+</html>

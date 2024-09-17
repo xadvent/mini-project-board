@@ -4,6 +4,10 @@
 	--red: #ed1e45;
 }
 
+li {
+	list-style: none;
+}
+
 * {
 	transition: all var(--timing) ease-in-out;
 	padding: 0px;
