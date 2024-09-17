@@ -1,4 +1,4 @@
-const messageContainer = require("./messageContainer");
+const messageContainer = require("../utilities/messageContainer");
 
 const get = (req, res) => {
 	res.render("form");

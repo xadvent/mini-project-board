@@ -1,4 +1,4 @@
-const messageContainer = require("./messageContainer");
+const messageContainer = require("../utilities/messageContainer");
 
 const getSVG = async (userName) => {
 	const { createAvatar } = await import("@dicebear/core");

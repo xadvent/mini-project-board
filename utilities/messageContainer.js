@@ -42,6 +42,16 @@ class MessageContainer {
 		this.messages.push(message);
 	}
 
+	getMessage(user, text, added) {
+		this.messages.find((message) => {
+			return (
+				message.user == user &&
+				message.text == text &&
+				message.added == added
+			);
+		});
+	}
+
 	showMessages() {
 		return this.messages;
 	}

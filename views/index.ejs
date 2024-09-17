@@ -3,7 +3,7 @@
 </head>
 <html>
 	<body>
-		<h1>Mini Message Board</h1>
+		<h1 class="title">Mini Message Board</h1>
 		<button id="new-button" onclick="window.location.href='/new'">New Message</button>
 		<% messages.forEach((message) => { %>
 			<%- include('message', {
