@@ -16,6 +16,19 @@ This is a simple **Mini Message Board** application built using **Node.js**, **E
 - **EJS (Embedded JavaScript Templates)**: Template engine for rendering dynamic content on the front-end.
 - **DiceBear Avatars**: Used to generate user profile avatars dynamically based on the username.
 - **UUID**: Generates unique IDs for each message.
+- **CSS**: Basic styling for the message board.
+
+## Deployment
+
+The application has been deployed at:
+[Mini Message Board](https://mini-message-board-ps.adaptable.app/)
+
+## Usage
+
+1. Navigate to the homepage to view existing messages.
+2. Click **New Message** to add a message.
+3. Click any message to view comments and or leave your own comment.
+4. Avatars are dynamically generated based on the username.
 
 ## Setup and Installation
 
@@ -59,18 +72,6 @@ This is a simple **Mini Message Board** application built using **Node.js**, **E
 ├── package.json         # Project configuration and dependencies
 └── README.md            # Project documentation (this file)
 ```
-
-## Usage
-
-1. **Homepage:**
-   - Displays all messages on the board.
-   - You can click on a message to view its details, including comments.
-
-2. **Adding a new message:**
-   - Click on the "New Message" button on the homepage to add a new message.
-
-3. **Adding comments:**
-   - When viewing a message, fill in the comment form to add a comment.
 
 ## API Routes
 
