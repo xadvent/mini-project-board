@@ -14,10 +14,34 @@ const newDate = () => {
 
 const messages = [
 	{
-		text: "Hi there!",
+		text: "Click on a post 😎",
 		user: "Amando",
 		added: newDate(),
-		comments: [],
+		comments: [
+			{
+				user: "Pierce Strutt",
+				text: "You can add onto messages using the comments!",
+				added: newDate(),
+			},
+		],
+		id: uuidv4(),
+	},
+	{
+		text: "Thanks for checking out my project!",
+		user: "Pierce Strutt",
+		added: newDate(),
+		comments: [
+			{
+				user: "Pierce Strutt",
+				text: "This project was made to demonstrate basic backend programming skills! If you haven't, check out the README :)",
+				added: newDate(),
+			},
+			{
+				user: "Pierce Strutt",
+				text: "I still intend to polish this site up, so feel free to check it out again in the near future!",
+				added: newDate(),
+			},
+		],
 		id: uuidv4(),
 	},
 	{
@@ -25,24 +49,6 @@ const messages = [
 		user: "Charles",
 		added: newDate(),
 		comments: [],
-		id: uuidv4(),
-	},
-	{
-		text: "Thanks for checking this out!",
-		user: "Pierce Strutt",
-		added: newDate(),
-		comments: [
-			{
-				user: "Pierce Strutt",
-				text: "I'm currently adding a way to comment!",
-				added: newDate(),
-			},
-			{
-				user: "Pierce Strutt",
-				text: "This is just a test to see how the other comment will work...",
-				added: newDate(),
-			},
-		],
 		id: uuidv4(),
 	},
 ];
@@ -56,7 +62,9 @@ class MessageContainer {
 		message.id = uuidv4();
 		message.added = newDate();
 		message.comments = [];
-		this.messages.push(message);
+
+		const newMessages = [message].concat(this.messages);
+		this.messages = newMessages;
 	}
 
 	getMessage(user, text, added) {
@@ -75,7 +83,8 @@ class MessageContainer {
 	}
 
 	showMessages() {
-		return this.messages;
+		const sortedMessages = this.messages.sort((a, b) => b.added - a.added);
+		return sortedMessages;
 	}
 
 	addComment(id, comment) {
