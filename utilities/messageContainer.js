@@ -37,6 +37,11 @@ const messages = [
 				text: "I'm currently adding a way to comment!",
 				added: newDate(),
 			},
+			{
+				user: "Pierce Strutt",
+				text: "This is just a test to see how the other comment will work...",
+				added: newDate(),
+			},
 		],
 		id: uuidv4(),
 	},

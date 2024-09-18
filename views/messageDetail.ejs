@@ -4,6 +4,10 @@
 <html>
 	<body>
 		<h1 class="title">Mini Message Board</h1>
+		<div class="button-div">
+			<button id="new-button" onclick="window.location.href='/new'">New Message</button>
+			<button id="return-button" onclick="window.location.href='/'">return</button>
+		</div>
 		<div>
 			<%- include('message', {
 				'text': message.text,
@@ -13,7 +17,19 @@
 				'id': message.id
 			}) %>
 		</div>
-		<!-- <h3 id="comments-title">Comments</h3> -->
+		<form id='comment-form'>
+			<h3>Post your reply</h3>
+			<div class='input-comment-div'>
+				<label for='name'>User</label>
+				<input type='text' name="comment-user" value="Anonymous" onclick="this.select()" />
+			</div>
+			<div class='input-comment-div'>
+				<label for='text'>Message</label>
+				<input type='text' name="comment-text" value="Enter message here" onclick="this.select()" />
+			</div>
+			<button id="submit-button">Submit</button>
+		</form>
+		<h3 id="comments-title">Comments</h3>
 		<ul id="comments"><% message.comments.forEach((comment) => { %>
 			<%- include('comment', {
 				'user': comment.user,
@@ -22,7 +38,5 @@
 			}) %>
 		<% }) %>
 		</ul>
-		<button id="new-button" onclick="window.location.href='/new'">New Message</button>
-		<button id="return-button" onclick="window.location.href='/'">return</button>
 	</body>
 </html>

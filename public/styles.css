@@ -128,6 +128,48 @@ form {
 	box-shadow: 7px 10px 24px -10px rgba(0, 0, 0, 0.75);
 }
 
+#comment-form {
+	gap: 5px;
+	margin-top: 10px;
+	border: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+.input-comment-div > label {
+	font-size: 14px;
+}
+
+.input-comment-div > input[name="comment-text"] {
+	width: 300px;
+}
+.input-comment-div > input[name="comment-user"] {
+	width: 200px;
+}
+
+.input-comment-div > input {
+	border: none;
+	transition: all 0s;
+	border-radius: 0px;
+	border-bottom: 1px solid grey;
+	color: grey;
+}
+.input-comment-div > input:focus {
+	border: none;
+	color: black;
+	border-radius: 10px;
+}
+
+.input-comment-div {
+	display: flex;
+	flex-direction: column;
+}
+
+#comment-form > #submit-button {
+	align-self: end;
+}
+
 .input-box {
 	width: 100%;
 	display: flex;
@@ -165,13 +207,17 @@ form > h1 {
 
 #comments {
 	display: flex;
-	margin-top: 40px;
+	flex-direction: column;
+	margin-top: 30px;
+	/* gap: 15px; */
 }
 
 .comment {
 	display: flex;
 	flex-direction: column;
 	width: 300px;
+	border-top: 1px solid grey;
+	padding: 10px;
 }
 .comment-heading {
 	display: flex;
