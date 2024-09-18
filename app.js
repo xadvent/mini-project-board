@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const path = require("node:path");
 
+const port = process.env.PORT || 3000;
+
 app.use(express.urlencoded({ extended: true }));
 
 app.set("views", path.join(__dirname, "views"));
@@ -18,6 +20,6 @@ app.use("/", homeRouter);
 app.use("/new", newRouter);
 app.use("/message", messageRouter);
 
-app.listen(3000, () => {
-	console.log("Express server started at localhost:3000");
+app.listen(port, () => {
+	console.log("Express server started at localhost:" + port);
 });
