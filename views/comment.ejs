@@ -1,5 +1,7 @@
-<li>
-	<%- user %>:
-	<%- text %>
-	<%- added %>
+<li class="comment">
+	<div class='comment-heading'>
+		<p class="comment-user"><%- user %></p>
+		<p class="comment-date"><%- added %></p>
+	</div>
+	<p class="comment-text"><%- text %></p>
 </li>

@@ -1,32 +1,8 @@
 const messageContainer = require("../utilities/messageContainer");
-
-const getSVG = async (userName) => {
-	const { createAvatar } = await import("@dicebear/core");
-	const { lorelei } = await import("@dicebear/collection");
-
-	const avatar = createAvatar(lorelei, {
-		seed: userName,
-	});
-	const svg = avatar.toDataUri();
-
-	return svg;
-};
-
-const getMessagesWithProfiles = async () => {
-	const updatedMessages = await Promise.all(
-		messageContainer.showMessages().map(async (message) => {
-			const profile = await getSVG(message.user);
-			return {
-				...message,
-				profile,
-			};
-		}),
-	);
-	return updatedMessages;
-};
+const getProfile = require("../utilities/getProfile");
 
 const index = async (req, res) => {
-	const updatedMessages = await getMessagesWithProfiles();
+	const updatedMessages = await getProfile.getMessagesWithProfiles();
 	res.render("index", { messages: updatedMessages });
 };
 

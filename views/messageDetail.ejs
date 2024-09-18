@@ -4,9 +4,17 @@
 <html>
 	<body>
 		<h1 class="title">Mini Message Board</h1>
-		<h1 class='user'><%- message.user %> says</h1>
-		<p><%- message.text%></p>
-		<ul><% message.comments.forEach((comment) => { %>
+		<div>
+			<%- include('message', {
+				'text': message.text,
+				'user': message.user,
+				'added': message.added,
+				'profile': message.profile,
+				'id': message.id
+			}) %>
+		</div>
+		<!-- <h3 id="comments-title">Comments</h3> -->
+		<ul id="comments"><% message.comments.forEach((comment) => { %>
 			<%- include('comment', {
 				'user': comment.user,
 				'text': comment.text,

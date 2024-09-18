@@ -4,10 +4,6 @@
 	--red: #ed1e45;
 }
 
-li {
-	list-style: none;
-}
-
 * {
 	transition: all var(--timing) ease-in-out;
 	padding: 0px;
@@ -33,6 +29,10 @@ body {
 	align-items: center;
 }
 
+li {
+	list-style: none;
+}
+
 h1 {
 	padding: 10px 0px;
 }
@@ -44,8 +44,6 @@ h1 {
 
 #new-button:hover {
 	background-color: var(--blue);
-	color: white;
-	scale: 1.05;
 }
 
 button {
@@ -56,6 +54,11 @@ button {
 	border: 1px solid grey;
 	border-radius: 10px;
 	cursor: pointer;
+}
+
+button:hover {
+	scale: 1.05;
+	color: white;
 }
 
 .profile-photo {
@@ -139,14 +142,14 @@ input {
 
 #submit-button:hover {
 	background-color: var(--blue);
-	color: white;
-	scale: 1.05;
 }
 
 #cancel-button:hover {
 	background-color: var(--red);
-	color: white;
-	scale: 1.05;
+}
+
+#return-button:hover {
+	background-color: grey;
 }
 
 .form-buttons {
@@ -158,4 +161,36 @@ input {
 
 form > h1 {
 	font-size: 30px;
+}
+
+#comments {
+	display: flex;
+	margin-top: 40px;
+}
+
+.comment {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+}
+.comment-heading {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+.comment-user {
+	font-weight: 500;
+}
+
+.comment-date {
+	color: grey;
+	font-size: 12px;
+	align-self: center;
+}
+
+#comments-title {
+	align-self: left;
+	width: 300px;
+	text-align: left;
 }
