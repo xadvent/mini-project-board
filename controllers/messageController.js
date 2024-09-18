@@ -14,6 +14,20 @@ const get = async (req, res) => {
 	}
 };
 
+const post = (req, res) => {
+	const id = req.params.messageid;
+
+	const message = messageContainer.getMessageById(id);
+	if (!message) {
+		return res.status(404).send("Message not found");
+	}
+
+	messageContainer.addComment(id, req.body);
+
+	res.redirect("/message/" + id);
+};
+
 module.exports = {
 	get,
+	post,
 };

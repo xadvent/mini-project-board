@@ -17,15 +17,15 @@
 				'id': message.id
 			}) %>
 		</div>
-		<form id='comment-form'>
+		<form id='comment-form' action="/message/<%= message.id %>" method="POST">
 			<h3>Post your reply</h3>
 			<div class='input-comment-div'>
 				<label for='name'>User</label>
-				<input type='text' name="comment-user" value="Anonymous" onclick="this.select()" />
+				<input type='text' name="user" value="Anonymous" onclick="this.select()" />
 			</div>
 			<div class='input-comment-div'>
 				<label for='text'>Message</label>
-				<input type='text' name="comment-text" value="Enter message here" onclick="this.select()" />
+				<input type='text' name="text" value="Enter message here" onclick="this.select()" />
 			</div>
 			<button id="submit-button">Submit</button>
 		</form>

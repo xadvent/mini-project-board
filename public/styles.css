@@ -141,10 +141,10 @@ form {
 	font-size: 14px;
 }
 
-.input-comment-div > input[name="comment-text"] {
+.input-comment-div > input[name="text"] {
 	width: 300px;
 }
-.input-comment-div > input[name="comment-user"] {
+.input-comment-div > input[name="user"] {
 	width: 200px;
 }
 

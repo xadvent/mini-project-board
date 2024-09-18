@@ -77,6 +77,24 @@ class MessageContainer {
 	showMessages() {
 		return this.messages;
 	}
+
+	addComment(id, comment) {
+		const message = this.getMessageById(id);
+
+		if (!message) {
+			console.error(`Message with id ${id} not found`);
+			return;
+		}
+
+		const user = comment.user;
+		const text = comment.text;
+
+		message.comments.push({
+			user,
+			text,
+			added: newDate(),
+		});
+	}
 }
 
 module.exports = new MessageContainer();
